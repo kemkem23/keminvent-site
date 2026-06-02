@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Locked-down CSP: no scripts, no external resources of any kind. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <title>keminvent.com</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23111'/><circle cx='16' cy='16' r='5' fill='%23ff5a1f'/></svg>">
+  <style>
+    :root {
+      --bg: #f4f4f2;
+      --fg: #111111;
+      --muted: #8a8a86;
+      --accent: #ff5a1f;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0b0b0c; --fg: #f4f4f2; --muted: #6f6f73; }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    main {
+      text-align: center;
+      padding: 2rem;
+      animation: fade 0.8s ease both;
+    }
+    .dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-bottom: 1.4rem;
+      box-shadow: 0 0 0 0 var(--accent);
+      animation: pulse 2.4s ease-out infinite;
+    }
+    h1 {
+      font-size: clamp(1.6rem, 7vw, 3.4rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+    h1 .tld { color: var(--muted); }
+    p {
+      margin-top: 1.1rem;
+      font-size: clamp(0.72rem, 2.6vw, 0.86rem);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(255,90,31,0.5); }
+      70%  { box-shadow: 0 0 0 14px rgba(255,90,31,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,90,31,0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      main { animation: none; }
+      .dot { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="dot" aria-hidden="true"></span>
+    <h1>keminvent<span class="tld">.com</span></h1>
+    <p>Coming&nbsp;soon</p>
+  </main>
+</body>
+</html>
